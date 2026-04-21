@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebOS AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="desktop">
+    <!-- Desktop Icons -->
+    <div class="icon" onclick="openApp('notepad')">📝 Notepad</div>
+    <div class="icon" onclick="openApp('terminal')">💻 Terminal</div>
+    <div class="icon" onclick="openApp('ai')">🤖 AI Assistant</div>
+
+    <!-- Windows -->
+    <div id="window-notepad" class="window hidden">
+        <div class="title-bar">Notepad <span onclick="closeApp('notepad')">✖</span></div>
+        <textarea></textarea>
+    </div>
+
+    <div id="window-terminal" class="window hidden">
+        <div class="title-bar">Terminal <span onclick="closeApp('terminal')">✖</span></div>
+        <div id="terminal-output"></div>
+        <input id="terminal-input" placeholder="Enter command...">
+    </div>
+
+    <div id="window-ai" class="window hidden">
+        <div class="title-bar">AI Assistant <span onclick="closeApp('ai')">✖</span></div>
+        <div id="chat-box"></div>
+        <input id="chat-input" placeholder="Ask something...">
+    </div>
+</div>
+
+<!-- Taskbar -->
+<div id="taskbar">
+    <button onclick="toggleStart()">Start</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
