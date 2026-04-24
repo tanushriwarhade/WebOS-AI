@@ -15,20 +15,26 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cssDiff = void 0;
-exports.diffCss = diffCss;
+exports.arrayDiff = void 0;
+exports.diffArrays = diffArrays;
 var base_js_1 = require("./base.js");
-var CssDiff = /** @class */ (function (_super) {
-    __extends(CssDiff, _super);
-    function CssDiff() {
+var ArrayDiff = /** @class */ (function (_super) {
+    __extends(ArrayDiff, _super);
+    function ArrayDiff() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    CssDiff.prototype.tokenize = function (value) {
-        return value.split(/([{}:;,]|\s+)/);
+    ArrayDiff.prototype.tokenize = function (value) {
+        return value.slice();
     };
-    return CssDiff;
+    ArrayDiff.prototype.join = function (value) {
+        return value;
+    };
+    ArrayDiff.prototype.removeEmpty = function (value) {
+        return value;
+    };
+    return ArrayDiff;
 }(base_js_1.default));
-exports.cssDiff = new CssDiff();
-function diffCss(oldStr, newStr, options) {
-    return exports.cssDiff.diff(oldStr, newStr, options);
+exports.arrayDiff = new ArrayDiff();
+function diffArrays(oldArr, newArr, options) {
+    return exports.arrayDiff.diff(oldArr, newArr, options);
 }
