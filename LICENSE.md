@@ -1,3 +1,2 @@
-{
-  "type": "commonjs"
-}
+export {};
+//# sourceMappingURL=options.js.map
